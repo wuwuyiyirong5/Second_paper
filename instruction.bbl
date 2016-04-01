@@ -1,0 +1,134 @@
+\begin{thebibliography}{10}
+
+\bibitem{li2001mesh}
+R.~Li, W.~Liu, T.~Tang, and P.~Zhang.
+\newblock Moving mesh finite element methods based on harmonic maps, 2001.
+
+\bibitem{di2005}
+Yana Di, Ruo Li, Tao Tang, and Pingwen Zhang.
+\newblock {Moving mesh finite element methods for the incompressible
+  Navier-Stokes equations}.
+\newblock {\em SIAM Journal on Scientific Computing}, 26(3):1036--1056, 2005.
+
+\bibitem{Winslow1966NUMERICAL}
+Alan~M Winslow.
+\newblock Numerical solution of the quasilinear poisson equation in a
+  nonuniform triangle mesh.
+\newblock {\em Journal of Computational Physics}, 135(2):128--138, 1966.
+
+\bibitem{dvinsky1991adaptive}
+Arkady~S. Dvinsky.
+\newblock {Adaptive grid generation from harmonic maps on Riemannian
+  manifolds}.
+\newblock {\em Journal of Computational Physics}, 95(2):450--476, 1991.
+
+\bibitem{di2005moving}
+Yana Di, Ruo Li, Tao Tang, and Pingwen Zhang.
+\newblock Moving mesh finite element methods for the incompressible
+  navier--stokes equations.
+\newblock {\em SIAM Journal on Scientific Computing}, 26(3):1036--1056, 2005.
+
+\bibitem{Wu2016moving}
+Wu~Yirong and Heyu Wang.
+\newblock Moving mesh finite element method for unsteady navier--stokes flow.
+\newblock {\em submitted}.
+
+\bibitem{bercovier1979error}
+Michel Bercovier and Olivier Pironneau.
+\newblock Error estimates for finite element method solution of the stokes
+  problem in the primitive variables.
+\newblock {\em Numerische Mathematik}, 33(2):211--224, 1979.
+
+\bibitem{benzi2005numerical}
+Michele Benzi, Gene~H Golub, and J{\"o}rg Liesen.
+\newblock Numerical solution of saddle point problems.
+\newblock {\em Acta numerica}, 14:1--137, 2005.
+
+\bibitem{shen1999schur}
+Ling Shen and Jinchao Xu.
+\newblock On a schur complement operator arisen from navier-stokes equations
+  and its preconditioning.
+\newblock {\em LECTURE NOTES IN PURE AND APPLIED MATHEMATICS}, pages 481--490,
+  1999.
+
+\bibitem{bai2005inexact}
+Zhong-Zhi Bai and Michael~K Ng.
+\newblock On inexact preconditioners for nonsymmetric matrices.
+\newblock {\em SIAM Journal on Scientific Computing}, 26(5):1710--1724, 2005.
+
+\bibitem{bai2006structured}
+Zhong-Zhi Bai.
+\newblock Structured preconditioners for nonsingular matrices of block
+  two-by-two structures.
+\newblock {\em Mathematics of Computation}, 75(254):791--815, 2006.
+
+\bibitem{elman2007least}
+Howard Elman, Victoria~E Howle, John Shadid, David Silvester, and Ray Tuminaro.
+\newblock Least squares preconditioners for stabilized discretizations of the
+  navier-stokes equations.
+\newblock {\em SIAM Journal on Scientific Computing}, 30(1):290--311, 2007.
+
+\bibitem{elman2009boundary}
+Howard~C Elman and Ray~S Tuminaro.
+\newblock Boundary conditions in approximate commutator preconditioners for the
+  navier-stokes equations.
+\newblock {\em Electronic Transactions on Numerical Analysis}, 35:257--280,
+  2009.
+
+\bibitem{benzi2006augmented}
+Michele Benzi and Maxim~A Olshanskii.
+\newblock An augmented lagrangian-based approach to the oseen problem.
+\newblock {\em SIAM Journal on Scientific Computing}, 28(6):2095--2113, 2006.
+
+\bibitem{benzi2011relaxed}
+Michele Benzi, Michael Ng, Qiang Niu, and Zhen Wang.
+\newblock A relaxed dimensional factorization preconditioner for the
+  incompressible navier--stokes equations.
+\newblock {\em Journal of Computational Physics}, 230(16):6185--6202, 2011.
+
+\bibitem{boyle2007hsl}
+J~Boyle, MD~Mihajlovic, and JA~Scott.
+\newblock Hsl mi20: an efficient amg preconditioner.
+\newblock Technical report, Citeseer, 2007.
+
+\bibitem{boyle2010hsl_mi20}
+Jonathan Boyle, Milan Mihajlovi{\'c}, and Jennifer Scott.
+\newblock Hsl\_mi20: an efficient amg preconditioner for finite element
+  problems in 3d.
+\newblock {\em International journal for numerical methods in engineering},
+  82(1):64--98, 2010.
+
+\bibitem{elman2005finite}
+Howard~C Elman, David~J Silvester, and Andrew~J Wathen.
+\newblock {\em Finite Elements and Fast Iterative Solvers: with Applications in
+  Incompressible Fluid Dynamics: with Applications in Incompressible Fluid
+  Dynamics}.
+\newblock Oxford University Press, 2005.
+
+\bibitem{li2005multi}
+Ruo Li.
+\newblock On multi-mesh h-adaptive methods.
+\newblock {\em Journal of Scientific Computing}, 24(3):321--341, 2005.
+
+\bibitem{elman2011fast}
+Howard Elman, Milan Mihajlovi{\'c}, and David Silvester.
+\newblock Fast iterative solvers for buoyancy driven flow problems.
+\newblock {\em Journal of Computational Physics}, 230(10):3900--3914, 2011.
+
+\bibitem{li2002moving}
+Ruo Li, Tao Tang, and Pingwen Zhang.
+\newblock {A moving mesh finite element algorithm for singular problems in two
+  and three space dimensions}.
+\newblock {\em Journal of Computational Physics}, 177(2):365--393, 2002.
+
+\bibitem{cao1999anr}
+Weiming Cao, Weizhang Huang, and Robert~D Russell.
+\newblock Anr-adaptive finite element method based upon moving mesh pdes.
+\newblock {\em Journal of Computational Physics}, 149(2):221--244, 1999.
+
+\bibitem{milton1982album}
+Milton~Van Dyke.
+\newblock An album of fluid motion.
+\newblock 1982.
+
+\end{thebibliography}

@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: movingNS.aux
+The style file: unsrt.bst
+Database file #1: mathpaper.bib
+Warning--empty note in Wu2016moving
+You've used 20 entries,
+            1791 wiz_defined-function locations,
+            567 strings with 6744 characters,
+and the built_in function-call counts, 4611 in all, are:
+= -- 428
+> -- 195
+< -- 0
++ -- 73
+- -- 53
+* -- 361
+:= -- 745
+add.period$ -- 58
+call.type$ -- 20
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 169
+empty$ -- 448
+format.name$ -- 53
+if$ -- 987
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 18
+newline$ -- 101
+num.names$ -- 20
+pop$ -- 34
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 60
+stack$ -- 0
+substring$ -- 420
+swap$ -- 18
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 51
+width$ -- 22
+write$ -- 214
+(There was 1 warning)

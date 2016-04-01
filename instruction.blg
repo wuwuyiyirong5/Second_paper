@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: instruction.aux
+The style file: unsrt.bst
+Database file #1: mathpaper.bib
+Warning--empty year in Wu2016moving
+Warning--empty journal in milton1982album
+You've used 23 entries,
+            1791 wiz_defined-function locations,
+            585 strings with 7197 characters,
+and the built_in function-call counts, 5362 in all, are:
+= -- 501
+> -- 218
+< -- 1
++ -- 82
+- -- 59
+* -- 404
+:= -- 855
+add.period$ -- 68
+call.type$ -- 23
+change.case$ -- 23
+chr.to.int$ -- 0
+cite$ -- 25
+duplicate$ -- 208
+empty$ -- 521
+format.name$ -- 59
+if$ -- 1159
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 22
+newline$ -- 117
+num.names$ -- 23
+pop$ -- 45
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 84
+stack$ -- 0
+substring$ -- 477
+swap$ -- 30
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 59
+width$ -- 25
+write$ -- 247
+(There were 2 warnings)
