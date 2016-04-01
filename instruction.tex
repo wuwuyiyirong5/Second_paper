@@ -158,8 +158,11 @@
     There are a lot works on saddle point problems by developing
     preconditioners for Krylov subspace method, such as block
     preconditioner and multigrid strategy. Readers can refer to
-    \cite{benzi2005numerical} for detail. Many works(\cite{shen1999schur},
-    \cite{bai2005inexact}, \cite{bai2006structured},
+    \cite{benzi2005numerical} for detail. Two-grid method was
+    introduced to solve Navier-Stokes equations,
+    see(\cite{shen1999schur},\cite{xu1992iterative} and
+    \cite{he2003two}) for details. Many works(\cite{bai2005inexact},
+    \cite{bai2006structured},
     \cite{elman2007least},\cite{elman2009boundary}) introduce a
     variety of block preconditioners, whose main issue are finding a
     good approximation of schur complement. Also there are other
@@ -436,8 +439,16 @@
   explanation, we refer $F_p = A_p + W_p^n$ in this paper. We compare
   the efficiency of two choice of $F_p$ in numerical test below. We
   adopt the method in \cite{elman2009boundary} to deal with matrixes
-  $F_p$ and $A_p$ on Neumann boundary for improving efficiency.
-  
+  $F_p$ and $A_p$ on Neumann boundary for improving efficiency. $F_p$
+  should satisfy condition
+  \begin{equation}
+    \nu \frac{\partial p_h}{\partial n} + (\vec{w}_h \cdot \vec{n})
+    p_h = 0.
+    \label{eq::bc_Fp}
+  \end{equation}
+  on boundary $\partial \Omega$. We know that for cavity flow,
+  (\ref{eq::bc_Fp}) will become $\frac{\partial p_h}{\partial n} =
+  0$, which means do-nothing for $F_p$ on boundary $\Omega$. 
   In this work, we apply the PCD preconditioning strategy to moving mesh
   finite element method to efficiently solve system
   (\ref{eq::linear_system}). The moving strategy will be shown in next
@@ -691,11 +702,11 @@
        
        \begin{figure}[!htbp]
          \begin{center}
-             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/moving_mesh.eps}
-             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/vortex.eps}
+             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/moving_mesh_20.eps}
+             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/vortex_mesh20.eps}
         \end{center}
         \caption{\small Cavity flow, left: mesh, right: vorticity
-          contour, pressure mesh $40 \times 40$, $Re = 2000$.}
+          contour, pressure mesh $20 \times 20$, $Re = 2000$.}
         \label{fig::cavity_flow_mesh}
        \end{figure}
 
@@ -711,10 +722,10 @@
 
        \begin{figure}[!htbp]
          \begin{center}
-             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/streamline.eps}
+             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/streamline_mesh20.eps}
         \end{center}
         \caption{\small Cavity flow: velocity streamline, pressure
-          mesh $40 \times 40$, $Re = 2000$.}
+          mesh $20 \times 20$, $Re = 2000$.}
         \label{fig::cavity_flow_streamline}
        \end{figure}
 
@@ -728,6 +739,25 @@
         \label{fig::cavity_GMRES_steps}
        \end{figure}
        
+       \begin{table}[!htbp]
+         \centering
+         \begin{tabular}{ccc}
+           \toprule
+           \multirow{2}{*}{pressure mesh}  & \multicolumn{2}{c}{mean GMRES step number} \\
+           \cline{2-3}
+                           & $AMG$ & $ILU$ \\ \midrule
+           $20 \times 20$   &      $10.8$           &     $107.5$
+           \\ \midrule
+           $40 \times 40$   &      $16.01$             &     $307.33$
+           \\ \midrule       
+           $80 \times 80$   &     $25.5$              &     $>500$
+           \\ \bottomrule 
+         \end{tabular}
+         \caption{Cavity flow: comparation of mean GMRES step number in solving linear system
+           (\ref{eq::linear_system}) with AMG and ILU precondtioning, $Re = 2000$.}
+         \label{tab::comparation_GMRES_steps}
+       \end{table}
+
        \begin{table}[!htbp]
          \centering
          \begin{tabular}{cccc}
@@ -748,54 +778,54 @@
            preconditioning at first time step, $Re = 2000$.}
          \label{tab::GMRES_steps_initial}
        \end{table}
-   \subsection{Backward step flow}
+   % \subsection{Backward step flow}
 
-      This example models the envolution of flow over a backward step.
-      The length of the channel is $l = 5$. Poiseuille flow boundary
-      condition $\vec{u} = (1 - y^2, 0)^T$is imposed on the inflow
-      boundary $x = -1, y \in (0, -1)$. $\vec{u} = (0, 0)^T$ is imposed
-      on the top and bottom walls while a natrual condition on the
-      outflow boundary $x = 1, y \in (-1, 1)$. We choose viscosity
-      $\nu = 0.02$, then the flow tends to steady as $t \rightarrow
-      \infty$.
+   %    This example models the envolution of flow over a backward step.
+   %    The length of the channel is $l = 5$. Poiseuille flow boundary
+   %    condition $\vec{u} = (1 - y^2, 0)^T$is imposed on the inflow
+   %    boundary $x = -1, y \in (0, -1)$. $\vec{u} = (0, 0)^T$ is imposed
+   %    on the top and bottom walls while a natrual condition on the
+   %    outflow boundary $x = 1, y \in (-1, 1)$. We choose viscosity
+   %    $\nu = 0.02$, then the flow tends to steady as $t \rightarrow
+   %    \infty$.
       
-      We choose (\ref{eq::monitor_vorticity}) as monitor function
-      with parameters $\alpha = 2.0, \beta = 2.0$. Singularities arise
-      at the concave corner where flow expanding, so there needs more
-      grids. In Figure \ref{fig::step_flow_mesh_streamline}, mesh
-      clusters near the concave corner consistent with our assumption. 
+   %    We choose (\ref{eq::monitor_vorticity}) as monitor function
+   %    with parameters $\alpha = 2.0, \beta = 2.0$. Singularities arise
+   %    at the concave corner where flow expanding, so there needs more
+   %    grids. In Figure \ref{fig::step_flow_mesh_streamline}, mesh
+   %    clusters near the concave corner consistent with our assumption. 
       
-      Our computational time step length is near $0.008$ which
-      satisfing the CFL condition. GMRES iteration counts of solving
-      system (\ref{eq::linear_system}) and
-      (\ref{eq::full_discreted_update}) via time are shown in
-      Figure \ref{fig::GMRES_steps_total}. It requires less than 21
-      iteration steps in solving (\ref{eq::linear_system}). 
-      It is more efficient by choosing $M_S^* = \frac{1}{\nu} A_p$
-      than $M_S^* = A_p$ in (\ref{eq::updateSolution_precond}).
+   %    Our computational time step length is near $0.008$ which
+   %    satisfing the CFL condition. GMRES iteration counts of solving
+   %    system (\ref{eq::linear_system}) and
+   %    (\ref{eq::full_discreted_update}) via time are shown in
+   %    Figure \ref{fig::GMRES_steps_total}. It requires less than 21
+   %    iteration steps in solving (\ref{eq::linear_system}). 
+   %    It is more efficient by choosing $M_S^* = \frac{1}{\nu} A_p$
+   %    than $M_S^* = A_p$ in (\ref{eq::updateSolution_precond}).
  
-      \begin{figure}[!htbp]
-        \centering
-        \includegraphics[width = 0.3\textwidth, angle =
-        -90]{picture/L_shaped_flow_data/mesh.eps}
-        \includegraphics[width = 0.3\textwidth, angle =
-        -90]{picture/L_shaped_flow_data/streamline.eps}
-        \caption{\small Top: moving mesh, bottom: velocity streamline
-          in step flow at $t = 100s$, viscosity $\nu = 0.02$.}
-        \label{fig::step_flow_mesh_streamline}
-      \end{figure}
+   %    \begin{figure}[!htbp]
+   %      \centering
+   %      \includegraphics[width = 0.3\textwidth, angle =
+   %      -90]{picture/L_shaped_flow_data/mesh.eps}
+   %      \includegraphics[width = 0.3\textwidth, angle =
+   %      -90]{picture/L_shaped_flow_data/streamline.eps}
+   %      \caption{\small Top: moving mesh, bottom: velocity streamline
+   %        in step flow at $t = 100s$, viscosity $\nu = 0.02$.}
+   %      \label{fig::step_flow_mesh_streamline}
+   %    \end{figure}
 
-      \begin{figure}[!htbp]
-        \begin{center}
-          \includegraphics[width = 0.45\textwidth, angle = 0]{picture/L_shaped_flow_data/iterate_steps.eps}
-          \includegraphics[width = 0.45\textwidth, angle = 0]{picture/L_shaped_flow_data/iterate_steps_scale_Ap.eps}
-        \end{center}
-        \caption{\small Step flow, GMRES iteration counts via time,
-          left: $M_S^* = A_p$ in (\ref{eq::updateSolution_precond}),
-          right: $M_S^* = \frac{1}{\nu} A_p$ in
-          (\ref{eq::updateSolution_precond}), $\nu = 0.02$}
-        \label{fig::GMRES_steps_total}
-      \end{figure}
+   %    \begin{figure}[!htbp]
+   %      \begin{center}
+   %        \includegraphics[width = 0.45\textwidth, angle = 0]{picture/L_shaped_flow_data/iterate_steps.eps}
+   %        \includegraphics[width = 0.45\textwidth, angle = 0]{picture/L_shaped_flow_data/iterate_steps_scale_Ap.eps}
+   %      \end{center}
+   %      \caption{\small Step flow, GMRES iteration counts via time,
+   %        left: $M_S^* = A_p$ in (\ref{eq::updateSolution_precond}),
+   %        right: $M_S^* = \frac{1}{\nu} A_p$ in
+   %        (\ref{eq::updateSolution_precond}), $\nu = 0.02$}
+   %      \label{fig::GMRES_steps_total}
+   %    \end{figure}
 
    \subsection{Flow over cylinder}
    
@@ -852,7 +882,7 @@
       
       \begin{figure}[!htbp]
         \centering
-        \includegraphics[width = 0.3\textwidth, angle = -90]{picture/obstacle_flow_data/mesh_t_2s.eps}
+        \includegraphics[width = 0.5\textwidth, angle = -90]{picture/obstacle_flow_data/mesh_vortex_t2s.eps}
         \caption{\small Flow over cylinder: moving mesh at $t = 2s$,
           viscosity $Re = 600$}
         \label{fig::cylinder_mesh_2s}
@@ -860,7 +890,7 @@
 
       \begin{figure}[!htbp]
         \centering
-        \includegraphics[width = 0.3\textwidth, angle = -90]{picture/obstacle_flow_data/mesh_t_40s.eps}
+        \includegraphics[width = 0.5\textwidth, angle = -90]{picture/obstacle_flow_data/mesh_vortex_t40s.eps}
         \caption{\small Flow over cylinder: moving mesh at $t = 40s$,
           viscosity $Re = 600$.}
         \label{fig::cylinder_mesh_40s}

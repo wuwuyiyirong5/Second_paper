@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2013.11.7)  31 MAR 2016 14:27
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2013.11.7)  1 APR 2016 17:24
 entering extended mode
  %&-line parsing enabled.
 **instruction.tex
@@ -945,12 +945,12 @@ Overfull \hbox (4.45712pt too wide) has occurred while \output is active
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Overfull \hbox (11.73143pt too wide) in paragraph at lines 242--262
+Overfull \hbox (11.73143pt too wide) in paragraph at lines 245--265
 [][][] 
  []
 
 [3] [4]
-Overfull \hbox (7.61443pt too wide) in paragraph at lines 405--409
+Overfull \hbox (7.61443pt too wide) in paragraph at lines 408--412
 \T1/mdbch/m/n/10.95 We will ex-plain the $\OML/mdbch/m/it/10.95 V[] \OT1/mdbch/
 m/n/10.95 = \OMS/mdbch/m/n/10.95 M[]\OML/mdbch/m/it/10.95 V[]$ \T1/mdbch/m/n/10
 .95 in two steps, where $\OML/mdbch/m/it/10.95 V[] \OT1/mdbch/m/n/10.95 = (\OML
@@ -960,19 +960,19 @@ V[] \OT1/mdbch/m/n/10.95 = (\OML/mdbch/m/it/10.95 V[]; V[]; V[]\OT1/mdbch/m/n/1
  []
 
 LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
-(Font)              scaled to size 11.77121pt on input line 431.
+(Font)              scaled to size 11.77121pt on input line 434.
 [5]
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 514.
+(Font)              scaled to size 5.76004pt on input line 527.
  [6]
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 616.
- [7]
-File: picture/cavity_flow_data/moving_mesh.eps Graphic file (type eps)
- <picture/cavity_flow_data/moving_mesh.eps>
-File: picture/cavity_flow_data/vortex.eps Graphic file (type eps)
+(Font)              scaled to size 10.51207pt on input line 629.
+ [7] [8]
+File: picture/cavity_flow_data/moving_mesh_20.eps Graphic file (type eps)
+ <picture/cavity_flow_data/moving_mesh_20.eps>
+File: picture/cavity_flow_data/vortex_mesh20.eps Graphic file (type eps)
 
-<picture/cavity_flow_data/vortex.eps>
+<picture/cavity_flow_data/vortex_mesh20.eps>
 File: picture/cavity_flow_data/divergence_uniform_1.eps Graphic file (type eps)
 
 
@@ -980,53 +980,40 @@ File: picture/cavity_flow_data/divergence_uniform_1.eps Graphic file (type eps)
 File: picture/cavity_flow_data/divergence_moving_1.eps Graphic file (type eps)
 
 <picture/cavity_flow_data/divergence_moving_1.eps>
-File: picture/cavity_flow_data/streamline.eps Graphic file (type eps)
+File: picture/cavity_flow_data/streamline_mesh20.eps Graphic file (type eps)
 
-<picture/cavity_flow_data/streamline.eps>
+<picture/cavity_flow_data/streamline_mesh20.eps>
 File: picture/cavity_flow_data/NS_iterate_steps.eps Graphic file (type eps)
 
-<picture/cavity_flow_data/NS_iterate_steps.eps> [8] [9] [10]
-File: picture/L_shaped_flow_data/mesh.eps Graphic file (type eps)
+<picture/cavity_flow_data/NS_iterate_steps.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<picture/L_shaped_flow_data/mesh.eps>
-File: picture/L_shaped_flow_data/streamline.eps Graphic file (type eps)
-
-<picture/L_shaped_flow_data/streamline.eps>
-File: picture/L_shaped_flow_data/iterate_steps.eps Graphic file (type eps)
-
-<picture/L_shaped_flow_data/iterate_steps.eps>
-File: picture/L_shaped_flow_data/iterate_steps_scale_Ap.eps Graphic file (type 
-eps)
-
-<picture/L_shaped_flow_data/iterate_steps_scale_Ap.eps> [11]
+ [9]
+[10]
 File: picture/obstacle_flow_data/comparation_NS_iterate_step.eps Graphic file (
 type eps)
-
-<picture/obstacle_flow_data/comparation_NS_iterate_step.eps>
+ <picture/obstacle_flow_data/comparation_NS_iterate_step.eps>
 File: picture/obstacle_flow_data/NS_iterate_steps.eps Graphic file (type eps)
 
 <picture/obstacle_flow_data/NS_iterate_steps.eps>
 File: picture/obstacle_flow_data/moving_iterate_steps.eps Graphic file (type ep
 s)
 
-<picture/obstacle_flow_data/moving_iterate_steps.eps> [12]
-File: picture/obstacle_flow_data/mesh_t_2s.eps Graphic file (type eps)
+<picture/obstacle_flow_data/moving_iterate_steps.eps>
+File: picture/obstacle_flow_data/mesh_vortex_t2s.eps Graphic file (type eps)
 
-<picture/obstacle_flow_data/mesh_t_2s.eps>
-File: picture/obstacle_flow_data/mesh_t_40s.eps Graphic file (type eps)
+<picture/obstacle_flow_data/mesh_vortex_t2s.eps>
+File: picture/obstacle_flow_data/mesh_vortex_t40s.eps Graphic file (type eps)
 
-<picture/obstacle_flow_data/mesh_t_40s.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
+<picture/obstacle_flow_data/mesh_vortex_t40s.eps> [11] [12] [13]
 (./instruction.bbl [14]) [15] (./instruction.aux) ) 
 Here is how much of TeX's memory you used:
- 14138 strings out of 493849
- 262673 string characters out of 1152846
- 305096 words of memory out of 3000000
- 17049 multiletter control sequences out of 15000+50000
+ 14132 strings out of 493849
+ 262489 string characters out of 1152846
+ 307096 words of memory out of 3000000
+ 17047 multiletter control sequences out of 15000+50000
  64262 words of font info for 104 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,15n,55p,711b,561s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,15n,55p,709b,561s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on instruction.dvi (15 pages, 67152 bytes).
+Output written on instruction.dvi (15 pages, 65856 bytes).

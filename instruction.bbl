@@ -51,6 +51,17 @@ Ling Shen and Jinchao Xu.
 \newblock {\em LECTURE NOTES IN PURE AND APPLIED MATHEMATICS}, pages 481--490,
   1999.
 
+\bibitem{xu1992iterative}
+Jinchao Xu.
+\newblock Iterative methods by space decomposition and subspace correction.
+\newblock {\em SIAM Review}, 34(4):581--613, 1992.
+
+\bibitem{he2003two}
+Yinnian He.
+\newblock Two-level method based on finite element and crank-nicolson
+  extrapolation for the time-dependent navier-stokes equations.
+\newblock {\em SIAM Journal on Numerical Analysis}, 41(4):1263--1285, 2003.
+
 \bibitem{bai2005inexact}
 Zhong-Zhi Bai and Michael~K Ng.
 \newblock On inexact preconditioners for nonsymmetric matrices.
