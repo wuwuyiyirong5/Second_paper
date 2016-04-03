@@ -68,7 +68,7 @@
 \citation{elman2009boundary}
 \newlabel{eq::semi_discreted_update}{{4.6}{7}}
 \newlabel{eq::full_discreted_update}{{4.7}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}AMG preconditioning strategy for (4.7\hbox {}) in solution distribution}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}AMG preconditioning strategy for (4.7\hbox {}) in solution re-distribution}{7}}
 \newlabel{mat::moving}{{4.8}{7}}
 \newlabel{eq::updateSolution_precond}{{4.9}{7}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4.1}{\ignorespaces Moving mesh FEM for Navier Stokes equation\relax }}{8}}
@@ -82,28 +82,24 @@
 \citation{cao1999anr}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Cavity flow, left: mesh, right: vorticity contour, pressure mesh $20 \times 20$, $Re = 2000$.\relax }}{9}}
 \newlabel{fig::cavity_flow_mesh}{{3}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Cavity flow, divgence left: uniform mesh, right: moving mesh, pressure mesh $20 \times 20$, $Re = 2000$.\relax }}{9}}
-\newlabel{fig::cavity_flow_divergence}{{4}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Cavity flow: velocity streamline, pressure mesh $40 \times 40$, $Re = 2000$.\relax }}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Cavity flow: comparation of mean GMRES step counts in solving linear system (3.2\hbox {}) with AMG and ILU precondtioning, $Re = 2000$.\relax }}{9}}
+\newlabel{tab::comparation_GMRES_steps}{{1}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Flow over cylinder}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Cavity flow, divergence of velocity, left: uniform mesh, right: moving mesh, pressure mesh $20 \times 20$, $Re = 2000$.\relax }}{10}}
+\newlabel{fig::cavity_flow_divergence}{{4}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Cavity flow: velocity streamline, pressure mesh $20 \times 20$, $Re = 2000$.\relax }}{10}}
 \newlabel{fig::cavity_flow_streamline}{{5}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Cavity flow: GMRES step counts of solving (3.2\hbox {}) with modified PCD preconditon, pressure mesh $40 \times 40$, $Re = 2000$.\relax }}{10}}
-\newlabel{fig::cavity_GMRES_steps}{{6}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Cavity flow: comparation of mean GMRES step number in solving linear system (3.2\hbox {}) with AMG and ILU precondtioning, $Re = 2000$.\relax }}{10}}
-\newlabel{tab::comparation_GMRES_steps}{{1}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Cavity flow: the number of GMRES steps in solving (4.7\hbox {}) in solution re-distribution with different precondition matrix $M_S^*$, $Re = 2000$.\relax }}{10}}
+\newlabel{tab::GMRES_steps_initial}{{2}{10}}
 \citation{milton1982album}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Cavity flow: GMRES step number of solving linear system (3.2\hbox {}) with different $F_p$ in PCD preconditioning at first time step, $Re = 2000$.\relax }}{11}}
-\newlabel{tab::GMRES_steps_initial}{{2}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Flow over cylinder}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Remarks}{11}}
-\newlabel{sec6}{{6}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Flow over cylinder: GMRES iteration counts of solving(3.2\hbox {}) with different $F_p$ in preconditioning, $\alpha = 5.0, Re = 600$.\relax }}{12}}
-\newlabel{fig::cylinder_GMRES_steps_comparation}{{7}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Flow over cylinder, left: GMRES iteration counts of solving (3.2\hbox {}), right: GMRES iteration counts of solving (4.7\hbox {}), $\nu = Re = 600$.\relax }}{12}}
-\newlabel{fig::cylinder_GMRES_steps}{{8}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Flow over cylinder: moving mesh at $t = 2s$, viscosity $Re = 600$\relax }}{13}}
-\newlabel{fig::cylinder_mesh_2s}{{9}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Flow over cylinder: moving mesh at $t = 40s$, viscosity $Re = 600$.\relax }}{13}}
-\newlabel{fig::cylinder_mesh_40s}{{10}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Flow over cylinder: GMRES iteration counts of solving(3.2\hbox {}) using PCD preconditioning with different $\alpha $, $Re = 240$.\relax }}{11}}
+\newlabel{fig::cylinder_GMRES_steps_comparation}{{6}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Flow over cylinder: the number of GMRES steps in solving \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces 3.2\hbox {}\unskip \@@italiccorr )}} and \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces 4.7\hbox {}\unskip \@@italiccorr )}} with different precondition matrix $M_S^*$ and different $F_p$ in PCD preconditioning, $\alpha = 5, Re = 240$.\relax }}{11}}
+\newlabel{tab::GMRES_steps_cylinder}{{3}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Flow over cylinder: moving mesh at $t = 2s$, $Re = 240$.\relax }}{12}}
+\newlabel{fig::cylinder_mesh_2s}{{7}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Flow over cylinder: moving mesh at $t = 40s$, $Re = 240$.\relax }}{12}}
+\newlabel{fig::cylinder_mesh_40s}{{8}{12}}
 \bibstyle{unsrt}
 \bibdata{mathpaper}
 \bibcite{li2001mesh}{1}
@@ -115,6 +111,8 @@
 \bibcite{bercovier1979error}{7}
 \bibcite{benzi2005numerical}{8}
 \bibcite{shen1999schur}{9}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Remarks}{13}}
+\newlabel{sec6}{{6}{13}}
 \bibcite{xu1992iterative}{10}
 \bibcite{he2003two}{11}
 \bibcite{bai2005inexact}{12}
@@ -131,4 +129,4 @@
 \bibcite{li2002moving}{23}
 \bibcite{cao1999anr}{24}
 \bibcite{milton1982album}{25}
-\newlabel{LastPage}{{}{15}}
+\newlabel{LastPage}{{}{14}}

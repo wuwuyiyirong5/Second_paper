@@ -437,7 +437,7 @@
   problem. In our experiements, $F_p$ in (\ref{eq::pcd_mat}) is not so
   efficient as getting rid of $\nu$ in (\ref{eq::pcd_mat}). If without
   explanation, we refer $F_p = A_p + W_p^n$ in this paper. We compare
-  the efficiency of two choice of $F_p$ in numerical test below. We
+  the efficiency of two choices of $F_p$ in numerical test below. We
   adopt the method in \cite{elman2009boundary} to deal with matrixes
   $F_p$ and $A_p$ on Neumann boundary for improving efficiency. $F_p$
   should satisfy condition
@@ -515,7 +515,7 @@
        when solving incompressible flow with moving mesh finite element
        method. In \cite{di2005moving}, solution re-distribution on the new 
        mesh $\mathcal{T}^{(n + 1)}$ is achieved via solving a lineard inviscid 
-       Navier-Stokes-type system as following-char
+       Navier-Stokes-type system as following
        \begin{eqnarray}
          \begin{aligned}
            \frac{\partial \vec{u}}{\partial \tau} - \nabla_{\vec{x}}\vec{u}
@@ -567,7 +567,7 @@
      \end{enumerate}  
 
    \subsection{AMG preconditioning strategy for
-     (\ref{eq::full_discreted_update}) in solution distribution}
+     (\ref{eq::full_discreted_update}) in solution re-distribution}
    (\ref{eq::full_discreted_update}) will bring out a linear
    system, whose coefficient matrix $\mathcal{M}^p$ can be denoted as
    \begin{equation}
@@ -690,15 +690,23 @@
        \ref{fig::cavity_flow_mesh}. It can be seen that mesh clusters
        at top boundary and right boundary where the magnitude of
        vorticity is large. Velocity streamline is shown in Figure
-       \ref{fig::cavity_flow_streamline}.
-       From Table \ref{tab::GMRES_steps_initial}, it requires less GMRES
+       \ref{fig::cavity_flow_streamline}. We contrast the magnitude of
+       velocity divergence between uniform mesh and moving mesh in
+       Figure \ref{fig::cavity_flow_divergence}. It is found that the
+       magnitude of velocity divergence in moving mesh is one harf of
+       uniform case.
+       From Figure \ref{fig::GMRES_steps_initial}, it requires less GMRES
        iteration steps by choosing $F_p = A_p + W_p^n$ than $F_p = \nu
-       A_p + W_p^n$ in PCD preconditioning. GMRES iteration
-       counts of solving linear system (\ref{eq::linear_system}) as
-       time evoluting is shown in Figure \ref{fig::cavity_GMRES_steps}.
-       It requires $14-24$ iterations to converge, when the flow tends
-       to steady state, the number of iterations is $15 - 16$.
-       
+       A_p + W_p^n$ in PCD preconditioning. We compare the number of
+       GMRES iteration counts in solving linear system
+       (\ref{eq::linear_system}) with AMG preconditioner and ILU
+       preconditioner in Table \ref{tab::comparation_GMRES_steps}. It
+       is discoverd that AMG in more efficient than ILU. We also
+       compare the number of GMRES iteration steps in solving
+       \eqref{eq::full_discreted_update} with different
+       preconditioning matrix $M_S^*$. It turns out to be that $M_S^*
+       = \frac{1}{\nu}$ is more efficient than $M_S^* = A_p$ in
+       solving \eqref{eq::full_discreted_update}.
        
        \begin{figure}[!htbp]
          \begin{center}
@@ -715,7 +723,7 @@
              \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/divergence_uniform_1.eps}
              \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/divergence_moving_1.eps}
         \end{center}
-        \caption{\small Cavity flow, divgence left: uniform mesh,
+        \caption{\small Cavity flow, divergence of velocity, left: uniform mesh,
           right: moving mesh, pressure mesh $20 \times 20$, $Re = 2000$.}
         \label{fig::cavity_flow_divergence}
        \end{figure}
@@ -729,15 +737,15 @@
         \label{fig::cavity_flow_streamline}
        \end{figure}
 
-       \begin{figure}[!htbp]
-         \begin{center}
-             \includegraphics[width = 0.55\textwidth, angle = 0]{picture/cavity_flow_data/NS_iterate_steps.eps}
-        \end{center}
-        \caption{\small Cavity flow: GMRES step counts of solving
-          (\ref{eq::linear_system}) with modified PCD preconditon,
-          pressure mesh $40 \times 40$, $Re = 2000$.}
-        \label{fig::cavity_GMRES_steps}
-       \end{figure}
+       % \begin{figure}[!htbp]
+       %   \begin{center}
+       %       \includegraphics[width = 0.55\textwidth, angle = 0]{picture/cavity_flow_data/NS_iterate_steps.eps}
+       %  \end{center}
+       %  \caption{\small Cavity flow: GMRES step counts of solving
+       %    (\ref{eq::linear_system}) with modified PCD preconditon,
+       %    pressure mesh $40 \times 40$, $Re = 2000$.}
+       %  \label{fig::cavity_GMRES_steps}
+       % \end{figure}
        
        \begin{table}[!htbp]
          \centering
@@ -750,10 +758,10 @@
            \\ \midrule
            $40 \times 40$   &      $16.01$             &     $307.33$
            \\ \midrule       
-           $80 \times 80$   &     $25.5$              &     $>500$
+           $80 \times 80$   &     $27.18$              &     $>500$
            \\ \bottomrule 
          \end{tabular}
-         \caption{Cavity flow: comparation of mean GMRES step number in solving linear system
+         \caption{Cavity flow: comparation of mean GMRES step counts in solving linear system
            (\ref{eq::linear_system}) with AMG and ILU precondtioning, $Re = 2000$.}
          \label{tab::comparation_GMRES_steps}
        \end{table}
@@ -762,20 +770,18 @@
          \centering
          \begin{tabular}{cccc}
            \toprule
-           \multirow{2}{*}{pressure mesh}    & \multirow{2}{*}{time
-             step} & \multicolumn{2}{c}{GMRES step number} \\
-           \cline{3-4}
-            &               & $F_p = \nu A_p + W_p^n$ & $F_p = A_p + W_p^n$ \\ \midrule
-           $20 \times 20$   &   $0.00656$         &      $41$           &     $8$
+           \multirow{2}{*}{pressure mesh}   & \multicolumn{2}{c}{GMRES step number} \\
+           \cline{2-3}
+                           & $M_S^* = \frac{1}{\nu}A_p $& $M_S^* = A_p$ \\ \midrule
+           $20 \times 20$  &      $4.96$           &     $13.19$
            \\ \midrule
-           $40 \times 40$   &   $0.00312$         &      $43$           &     $14$
-           \\ \midrule       
-           $80 \times 80$   &   $0.00153$   &      $48$    &     $18$
+           $40 \times 40$  &      $10.99$           &     $42.36$
            \\ \bottomrule 
          \end{tabular}
-         \caption{Cavity flow: GMRES step number of solving linear system
-           (\ref{eq::linear_system}) with different $F_p$ in PCD
-           preconditioning at first time step, $Re = 2000$.}
+         \caption{Cavity flow: the number of GMRES steps in solving
+           (\ref{eq::full_discreted_update}) 
+           in solution re-distribution with different precondition
+           matrix $M_S^*$, $Re = 2000$.}
          \label{tab::GMRES_steps_initial}
        \end{table}
    % \subsection{Backward step flow}
@@ -832,20 +838,22 @@
       This example models the development of flow over an cylinder
       along a retangular channel. This problem has been considered in
       \cite{cao1999anr}. The center of cylinder is $(0, 0)$ and the
-      radius is $r = 0.3$. Let viscosity $\nu$  equal  $1 / 300$ and
-      the domain $\Omega = [-1, 5] \times [-1, 1]$. At the inflow
+      radius is $r = 0.3$. Let viscosity $\nu = 1/300$, thus the
+      Reynolds number $Re = \frac{2rU_{m}}{\nu} = 240$ by direct
+      computation, where $U_{m}$ is the mean velocity of inflow. The
+      domain is $\Omega = [-1, 5] \times [-1, 1]$. At the inflow
       boundary $x = -1$, $\vec{u} = (1 - y^2, 0)^T$ with poiseuille
       profile is imposed. On the top and bottom boundary of the
       channel, condition $\vec{u} = (0, 0)^T$ is settled. Natural
       condition is imposed on $x = 5$. 
       
-      In our moving strategy, parameters $\alpha$ and
-      $\beta$ in (\ref{eq::monitor_vorticity}) are user defined. The
-      value of $\alpha$ is greater, the degree of mesh clustering is
-      larger. From Figure \ref{fig::cylinder_GMRES_steps}, it can be
+      In our moving strategy, parameters $\alpha$ and $\beta$ in
+      (\ref{eq::monitor_vorticity}) are user defined. The value of
+      $\alpha$ is greater, the degree of mesh clustering is larger. 
+      From Figure \ref{fig::cylinder_GMRES_steps_comparation}, it can be
       shown that the number of GMRES iteration step with $\alpha = 5$
       is larger than $\alpha = 1.0$. Comparation of GMRES step counts
-      between different choice of $F_p$ are shown in Figure 
+      between different choices of $F_p$ are shown in Figure 
       \ref{fig::cylinder_GMRES_steps_comparation}, it is found that
       the number of GMRES iteration steps will decrease more than 20 by  
       using $F_p = A + W_p^n$.
@@ -859,32 +867,51 @@
       
       \begin{figure}[!htbp]
         \begin{center}
-          \includegraphics[width = 0.55\textwidth]{picture/obstacle_flow_data/comparation_NS_iterate_step.eps}
+          \includegraphics[width = 0.55\textwidth]{picture/obstacle_flow_data/iteration_steps_via_alpha.eps}
         \end{center}
         \caption{\small Flow over cylinder: GMRES iteration counts of
-                 solving(\ref{eq::linear_system}) with different $F_p$ in
-                 preconditioning, $\alpha = 5.0, Re = 600$.}
+                 solving(\ref{eq::linear_system}) using PCD
+                 preconditioning with different $\alpha$, $Re = 240$.}
         \label{fig::cylinder_GMRES_steps_comparation}
       \end{figure}
       
-      \begin{figure}[!htbp]
-        \begin{center}
-          \includegraphics[width = 0.45\textwidth]{picture/obstacle_flow_data/NS_iterate_steps.eps}
-          \includegraphics[width = 0.45\textwidth]{picture/obstacle_flow_data/moving_iterate_steps.eps}
-        \end{center}
-        \caption{\small Flow over cylinder, left: GMRES iteration counts of
-          solving (\ref{eq::linear_system}), right: GMRES iteration
-          counts of solving (\ref{eq::full_discreted_update}), $\nu =
-          Re = 600$.}
-        \label{fig::cylinder_GMRES_steps}
-      \end{figure}
+      % \begin{figure}[!htbp]
+      %   \begin{center}
+      %     \includegraphics[width = 0.45\textwidth]{picture/obstacle_flow_data/NS_iterate_steps.eps}
+      %     \includegraphics[width = 0.45\textwidth]{picture/obstacle_flow_data/moving_iterate_steps.eps}
+      %   \end{center}
+      %   \caption{\small Flow over cylinder, left: GMRES iteration counts of
+      %     solving (\ref{eq::linear_system}), right: GMRES iteration
+      %     counts of solving (\ref{eq::full_discreted_update}), $Re = 600$.}
+      %   \label{fig::cylinder_GMRES_steps}
+      % \end{figure}
+       \begin{table}[!htbp]
+         \centering
+         \begin{tabular}{ccccc}
+           \toprule
+           \multirow{3}{*}{linear system}   &  \multicolumn{4}{c}{number of GMRES steps} \\
+           \cline{2-5}
+                           & \multicolumn{2}{c}{$F_p = A + W_p^n $} &
+                           \multicolumn{2}{c}{$F_p = \nu A + W_p^n $} \\ \midrule
+                           & $M_S^* = \frac{1}{\nu}A_p$&  $M_S^* = A_p$ & $M_S^* = \frac{1}{\nu}A_p$  &  $M_S^* = A_p$   \\ \midrule
+           \eqref{eq::linear_system}         & $51.06$   & $ 45.13$ &
+           $ 0 $   & $61.08$  \\ \midrule           
+           \eqref{eq::full_discreted_update} & $22.25$   & $40.35$  & $ 0 $   & $40.78$ 
+           \\ \bottomrule 
+         \end{tabular}
+         \caption{Flow over cylinder: the number of GMRES steps in solving
+           \eqref{eq::linear_system} and \eqref{eq::full_discreted_update} with different precondition
+           matrix $M_S^*$ and different $F_p$ in PCD preconditioning,
+           $\alpha = 5, Re = 240$.}
+         \label{tab::GMRES_steps_cylinder}
+       \end{table}
       
       
       \begin{figure}[!htbp]
         \centering
         \includegraphics[width = 0.5\textwidth, angle = -90]{picture/obstacle_flow_data/mesh_vortex_t2s.eps}
         \caption{\small Flow over cylinder: moving mesh at $t = 2s$,
-          viscosity $Re = 600$}
+         $Re = 240$.}
         \label{fig::cylinder_mesh_2s}
       \end{figure}
 
@@ -892,7 +919,7 @@
         \centering
         \includegraphics[width = 0.5\textwidth, angle = -90]{picture/obstacle_flow_data/mesh_vortex_t40s.eps}
         \caption{\small Flow over cylinder: moving mesh at $t = 40s$,
-          viscosity $Re = 600$.}
+         $Re = 240$.}
         \label{fig::cylinder_mesh_40s}
       \end{figure}
 
@@ -908,10 +935,14 @@
    complexities of problems. In our moving strategy, we use the
    monitor function based on vorticity to capture the fine flow
    structure. The structure of mesh is consistent with vorticity
-   structure. We compare the number of GMRES iterations of choosing
-   different $F_p$ in PCD preconditioning. It is verified that
-   modified PCD preconditioning is more efficient by three numerical
-   tests. It is discoverd that the number of GMRES iteration step will
+   structure. We compare the number of GMRES iteration steps in
+   solving Navier-Stokes problems with different $F_p$ in PCD
+   preconditioning. It is verified that choosing $F_p = A_p + W_p^n$
+   in PCD preconditioning is more efficient by three numerical tests.
+   We also constrast the number of GMRES step counts of solving linear 
+   system in solution re-distribution with different preconditioning 
+   matrix $M_S^*$. It turns out to be that $M_S^* = \frac{1}{\nu}A_p$
+   is more efficient. We find that the number of GMRES iteration steps will
    be larger as the mesh becomes clustering. 
    
    We will extend the efficient preconditioning to some intrested 

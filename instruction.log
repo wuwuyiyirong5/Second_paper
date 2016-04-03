@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2013.11.7)  1 APR 2016 17:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2013.11.7)  3 APR 2016 23:36
 entering extended mode
  %&-line parsing enabled.
 **instruction.tex
@@ -967,7 +967,12 @@ LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
  [6]
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
 (Font)              scaled to size 10.51207pt on input line 629.
- [7] [8]
+ [7]
+
+LaTeX Warning: Reference `fig::GMRES_steps_initial' on page 8 undefined on inpu
+t line 698.
+
+[8]
 File: picture/cavity_flow_data/moving_mesh_20.eps Graphic file (type eps)
  <picture/cavity_flow_data/moving_mesh_20.eps>
 File: picture/cavity_flow_data/vortex_mesh20.eps Graphic file (type eps)
@@ -982,38 +987,29 @@ File: picture/cavity_flow_data/divergence_moving_1.eps Graphic file (type eps)
 <picture/cavity_flow_data/divergence_moving_1.eps>
 File: picture/cavity_flow_data/streamline_mesh20.eps Graphic file (type eps)
 
-<picture/cavity_flow_data/streamline_mesh20.eps>
-File: picture/cavity_flow_data/NS_iterate_steps.eps Graphic file (type eps)
+<picture/cavity_flow_data/streamline_mesh20.eps> [9] [10]
+File: picture/obstacle_flow_data/iteration_steps_via_alpha.eps Graphic file (ty
+pe eps)
 
-<picture/cavity_flow_data/NS_iterate_steps.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
-[10]
-File: picture/obstacle_flow_data/comparation_NS_iterate_step.eps Graphic file (
-type eps)
- <picture/obstacle_flow_data/comparation_NS_iterate_step.eps>
-File: picture/obstacle_flow_data/NS_iterate_steps.eps Graphic file (type eps)
-
-<picture/obstacle_flow_data/NS_iterate_steps.eps>
-File: picture/obstacle_flow_data/moving_iterate_steps.eps Graphic file (type ep
-s)
-
-<picture/obstacle_flow_data/moving_iterate_steps.eps>
+<picture/obstacle_flow_data/iteration_steps_via_alpha.eps>
 File: picture/obstacle_flow_data/mesh_vortex_t2s.eps Graphic file (type eps)
 
 <picture/obstacle_flow_data/mesh_vortex_t2s.eps>
 File: picture/obstacle_flow_data/mesh_vortex_t40s.eps Graphic file (type eps)
 
-<picture/obstacle_flow_data/mesh_vortex_t40s.eps> [11] [12] [13]
-(./instruction.bbl [14]) [15] (./instruction.aux) ) 
+<picture/obstacle_flow_data/mesh_vortex_t40s.eps> [11] [12] (./instruction.bbl
+[13]) [14] (./instruction.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 14132 strings out of 493849
- 262489 string characters out of 1152846
+ 14127 strings out of 493849
+ 262295 string characters out of 1152846
  307096 words of memory out of 3000000
- 17047 multiletter control sequences out of 15000+50000
+ 17044 multiletter control sequences out of 15000+50000
  64262 words of font info for 104 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,15n,55p,709b,561s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,15n,55p,691b,561s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on instruction.dvi (15 pages, 65856 bytes).
+Output written on instruction.dvi (14 pages, 66732 bytes).
