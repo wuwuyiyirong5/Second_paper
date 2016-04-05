@@ -39,11 +39,6 @@ Michel Bercovier and Olivier Pironneau.
   problem in the primitive variables.
 \newblock {\em Numerische Mathematik}, 33(2):211--224, 1979.
 
-\bibitem{benzi2005numerical}
-Michele Benzi, Gene~H Golub, and J{\"o}rg Liesen.
-\newblock Numerical solution of saddle point problems.
-\newblock {\em Acta numerica}, 14:1--137, 2005.
-
 \bibitem{shen1999schur}
 Ling Shen and Jinchao Xu.
 \newblock On a schur complement operator arisen from navier-stokes equations
@@ -61,6 +56,11 @@ Yinnian He.
 \newblock Two-level method based on finite element and crank-nicolson
   extrapolation for the time-dependent navier-stokes equations.
 \newblock {\em SIAM Journal on Numerical Analysis}, 41(4):1263--1285, 2003.
+
+\bibitem{benzi2005numerical}
+Michele Benzi, Gene~H Golub, and J{\"o}rg Liesen.
+\newblock Numerical solution of saddle point problems.
+\newblock {\em Acta numerica}, 14:1--137, 2005.
 
 \bibitem{bai2005inexact}
 Zhong-Zhi Bai and Michael~K Ng.
